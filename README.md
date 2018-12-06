@@ -1,4 +1,6 @@
-Project is published on GitHub pages at https://github.com/syzmicanomaly/marvel_app
+Project is published on GitHub pages at https://syzmicanomaly.github.io/marvel_app/
+
+--------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
