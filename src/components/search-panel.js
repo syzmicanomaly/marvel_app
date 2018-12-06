@@ -1,6 +1,6 @@
 import {connect}                                        from "react-redux"
 import React                                            from 'react';
-import {Button, Form, FormGroup, Input, Label}          from 'reactstrap';
+import {Button, Col, Input, Row}                        from 'reactstrap';
 import {fetchResults, renderSearchResults, showMessage} from "../redux/actions";
 import Api                                              from "../marvel-api";
 
@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch => ({
             dispatch(showMessage("You must enter search text", "danger"));
             return;
         }
+        //TODO disable button, show Ajax loader
         dispatch(fetchResults(searchText));
         Api.fetchBySearchText(searchText).then((results) => {
             if (results.data) {
@@ -57,13 +58,14 @@ class SearchPanel extends React.Component {
         }
 
         return (
-            <Form>
-                <FormGroup>
-                    <Label for="searchText">Search Text</Label>
-                    <Input type="text" name="searchText" id="searchText" placeholder="Search Text" innerRef={this.textInput}/>
-                </FormGroup>
-                <Button onClick={onSearch}>Search</Button>
-            </Form>
+            <Row>
+                <Col md={10} style={{marginBottom: "10px"}}>
+                    <Input type="text" name="searchText" id="searchText" placeholder="Search Comics By Title" innerRef={this.textInput}/>
+                </Col>
+                <Col md={2}>
+                    <Button onClick={onSearch}>Search</Button>
+                </Col>
+            </Row>
         );
     }
 }

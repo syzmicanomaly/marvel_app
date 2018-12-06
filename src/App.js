@@ -22,14 +22,21 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Container>
-                    <AppMessage/>
-                    <SearchPanel/>
-                    <ResultsPanel/>
-                    <SingleResultPanel/>
-                    <Row>
-                        <Col>Data provided by Marvel. © 2014 Marvel</Col>
+                <Container fluid={true}>
+                    <Row style={{paddingTop: "20px", paddingBottom: "10px", marginBottom: "30px", backgroundColor: "#444444", color: "#FFFFFF"}}>
+                        <Col>
+                            <h3>Marvel Comics Search App</h3>
+                            <h6>Search 1000s of Marvel Comic titles</h6>
+                        </Col>
                     </Row>
+
+                    <Container>
+                        <AppMessage/>
+                        <SearchPanel/>
+                        <ResultsPanel/>
+                        <SingleResultPanel/>
+
+                    </Container>
                 </Container>
             </Provider>
         );

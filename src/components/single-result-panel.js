@@ -44,36 +44,38 @@ class SingleResultPanel extends React.Component {
 
 
         return (
-            <Container>
-                <Row>
-                    <Col>
-                        <Button onClick={props.showSearch}>Return to Search</Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={{size: 6, offset: 3}}>
-                        <Card>
-                            {src &&
-                            <CardImg top width={"100%"} src={src}>
+            <Row style={{marginBottom: "10px"}}>
+                <Container>
+                    <Row>
+                        <Col md={{offset: 10, size: 2}} style={{marginBottom: "20px"}}>
+                            <Button onClick={props.showSearch}>Back to Results</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={{size: 6, offset: 3}}>
+                            <Card>
+                                {src &&
+                                <CardImg top width={"100%"} src={src}>
 
-                            </CardImg>
-                            }
-                            {!src &&
-                            <CardBody>
-                                <CardTitle>{comic.title}</CardTitle>
-                            </CardBody>
-                            }
-                            <CardBody>
-                                <CardTitle>{comic.title}</CardTitle>
-                                <CardSubtitle>{renderHTML(comic.description)}</CardSubtitle>
-                                {fmtDate &&
-                                <CardText>Published: {fmtDate}</CardText>
+                                </CardImg>
                                 }
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
+                                {!src &&
+                                <CardBody>
+                                    <CardTitle>{comic.title}</CardTitle>
+                                </CardBody>
+                                }
+                                <CardBody>
+                                    <CardTitle style={{marginBottom: "15px"}}>{comic.title}</CardTitle>
+                                    <CardSubtitle>{renderHTML(comic.description || "")}</CardSubtitle>
+                                    {fmtDate &&
+                                    <CardText style={{marginTop: "5px"}}><strong>Published:</strong> {fmtDate}</CardText>
+                                    }
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
+            </Row>
         );
     }
 }

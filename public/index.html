@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,21 +20,56 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <style>
+        /* Sticky footer styles
+        -------------------------------------------------- */
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        html,
+        body {
+            height: 100%;
+            /* The html and body elements cannot have any padding or margin. */
+        }
+
+        /* Wrapper for page content to push down footer */
+        #root {
+            min-height: 100%;
+            height: auto;
+            /* Negative indent footer by its height */
+            margin: 0 auto -60px;
+            /* Pad bottom by footer height */
+            padding: 0 0 60px;
+        }
+
+        /* Set the fixed height of the footer here */
+        #footer {
+            height: 60px;
+            padding-top: 20px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body style="height: 100%">
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+<div id="root"></div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+<footer id="footer">
+    <div style="font-weight: bold; text-align: center">
+        <!--This attribution required per Marvel - see https://developer.marvel.com/documentation/attribution-->
+        Data provided by Marvel. © 2014 Marvel
+    </div>
+</footer>
+
+</body>
 </html>
