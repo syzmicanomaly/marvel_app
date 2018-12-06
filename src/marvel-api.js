@@ -1,11 +1,6 @@
-import md5 from "md5";
-
-//TODO using server-side API auth while doing local dev - must white-list calling domain for client-side use
 const
     baseUrl = "https://gateway.marvel.com",
-    apiKey  = "191e309068f42c22cf8dac1c9cd641bc",
-    privKey = "fed2207163bd43631090d34ca64eaaa65e74c23e"
-;
+    apiKey  = "191e309068f42c22cf8dac1c9cd641bc";
 
 const Api = {};
 
@@ -17,9 +12,7 @@ const Api = {};
  */
 Api.fetchBySearchText = (text) => {
     const
-        ts    = Date.now(),
-        hash  = md5(ts + privKey + apiKey),
-        query = `${baseUrl}/v1/public/comics?ts=${ts}&apikey=${apiKey}&hash=${hash}&title=${text}`,
+        query = `${baseUrl}/v1/public/comics?title=${text}&apikey=${apiKey}`,
         opts  = {}
     ;
     return fetch(query, opts).then(response => response.json());
@@ -33,9 +26,7 @@ Api.fetchBySearchText = (text) => {
  */
 Api.fetchById = (id) => {
     const
-        ts    = Date.now(),
-        hash  = md5(ts + privKey + apiKey),
-        query = `${baseUrl}/v1/public/comics/${id}?ts=${ts}&apikey=${apiKey}&hash=${hash}`,
+        query = `${baseUrl}/v1/public/comics/${id}?apikey=${apiKey}`,
         opts  = {}
     ;
     return fetch(query, opts).then(response => response.json());
